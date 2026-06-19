@@ -895,6 +895,62 @@ export default function App() {
           background: rgba(201,132,154,0.2) !important;
         }
 
+
+
+        .final-title {
+          max-width: 100%;
+          word-break: normal;
+          overflow-wrap: break-word;
+          overflow: visible;
+        }
+
+        .final-subtitle {
+          display: inline-block;
+          color: #E8C4D0;
+          font-style: italic;
+          font-size: 0.62em;
+          line-height: 1.35;
+          margin-top: 0.4rem;
+        }
+
+        @media (max-width: 768px) {
+          .photo-frame {
+            min-height: 360px !important;
+            height: auto !important;
+          }
+
+          .zoom-img {
+            object-fit: cover !important;
+            object-position: center top !important;
+            min-height: 360px;
+          }
+
+          .photo-bg {
+            filter: blur(20px) brightness(0.5) saturate(0.9);
+            transform: scale(1.18);
+          }
+
+          .gallery-tall .photo-frame,
+          .gallery-right .photo-frame {
+            min-height: 340px !important;
+          }
+
+          .gallery-right {
+            grid-template-columns: 1fr !important;
+          }
+
+          .final-title {
+            font-size: clamp(2.1rem, 12vw, 3.4rem) !important;
+            line-height: 1.24 !important;
+            padding: 0 0.4rem;
+          }
+
+          .final-subtitle {
+            font-size: 0.5em;
+            line-height: 1.45;
+          }
+        }
+
         @media (min-width: 768px) {
           .gallery-tall {
             grid-column: span 5 / span 5;
@@ -1366,7 +1422,7 @@ export default function App() {
         <SurpriseSection />
 
         <section
-          className="relative flex items-center justify-center overflow-hidden"
+          className="relative flex items-center justify-center overflow-hidden px-4"
           style={{ height: "100svh", minHeight: "600px" }}
         >
           <div className="absolute inset-0 bg-primary">
@@ -1403,18 +1459,22 @@ export default function App() {
             </p>
 
             <h2
+              className="final-title"
               style={{
                 fontFamily: SERIF,
                 fontWeight: 400,
                 color: "#FAF5F7",
-                fontSize: "clamp(3rem, 8.5vw, 7.5rem)",
-                lineHeight: 1.07,
+                fontSize: "clamp(2.6rem, 7vw, 7.5rem)",
+                lineHeight: 1.18,
                 marginBottom: "2rem",
+                overflow: "visible",
               }}
             >
               Найкраще
               <br />
-              <em style={{ color: "#E8C4D0" }}>тільки починається(мейбі канєшно)</em>
+              <em style={{ color: "#E8C4D0" }}>тільки починається</em>
+              <br />
+              <span className="final-subtitle">(мейбі канєшно)</span>
             </h2>
           </FadeIn>
         </section>
